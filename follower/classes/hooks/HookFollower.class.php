@@ -10,9 +10,7 @@ class PluginFollower_HookFollower extends Hook {
     }
 	
 	public function displayCopyright(){
-		$s = '<a href="http://goloskarpat.info/">goloskarpat.info</a>';
-		dump($s);
-        return $s;
+		return '<a href="http://goloskarpat.info/">goloskarpat.info</a>';
 	}
 }
 ?>
