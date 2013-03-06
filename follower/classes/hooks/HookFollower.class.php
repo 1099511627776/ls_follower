@@ -3,7 +3,7 @@
 class PluginFollower_HookFollower extends Hook {
 
     /*
-     * Ðåãèñòðàöèÿ ñîáûòèé íà õóêè
+     * Ð ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°Ñ†Ð¸Ñ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ð¹ Ð½Ð° Ñ…ÑƒÐºÐ¸
 	*/
     public function RegisterHook() {
         $this->AddHook('template_footer_end', 'displayCopyright',__CLASS__);

@@ -17,10 +17,7 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
 					call_user_func_array(array($this->oJevix,$sMethod), $aParams);
 				}
 			}
-			/**
-			 * Хардкодим некоторые параметры
-			 */
-			unset($this->oJevix->entities1['&']); // разрешаем в параметрах символ &
+			unset($this->oJevix->entities1['&']);
 			if (Config::Get('view.noindex') and isset($this->oJevix->tagsRules['a'])) {				
 				$this->oJevix->cfgSetTagParamDefault('a','rel','nofollow',true);
 				if($oUser = $this->User_GetUserCurrent()){
@@ -35,7 +32,6 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
 	}
 
 	protected function FollowDomain($sText,$sDomain){
-//		print $sText;
 		$sResult = $sText;
 		$sResult = preg_replace(
 			"/<\s*a(.*?)href=[\"'](.*?".$sDomain.".*?)[\"'](.*?)>/mi",
@@ -46,7 +42,6 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
 		$sResult = preg_replace(
 			"/<a\s+href=[\"'](.*?".$sDomain.".*?)[\"'](.*?)rel=[\"](.*?)[\"](.*?)>/mi",
 			"<a href=\"$1\" $2 rel=\"follow\" $4>",$sResult);
-//		die($sResult);
 		return $sResult;
 	}
 	protected function FollowDomains($sText){
@@ -58,13 +53,11 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
 		}
 		return $sResult;
 	}
-
 	public function Parser($sText) {
 		$sResult = parent::Parser($sText);
 		$sResult = $this->FollowDomains($sResult);
 		return $sResult;
 	}
-
 }
 
 ?>
