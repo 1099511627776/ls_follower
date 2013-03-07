@@ -6,8 +6,10 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
 		parent::LoadJevixConfig($sType,$bClear);
 		if($oUser = $this->User_GetUserCurrent()){
 			if($autofollow = Config::Get('plugin.follower.autofollow')){
-				if(in_array($oUser->getId(),$autofollow)){
-					$this->oJevix->cfgSetTagParamDefault('a','rel','',true);
+				if(isset($this->oJevix->tagsRules['a'])) {
+					if(in_array($oUser->getId(),$autofollow)){
+						$this->oJevix->cfgSetTagParamDefault('a','rel','',true);
+					}
 				}
 			}
 		}
