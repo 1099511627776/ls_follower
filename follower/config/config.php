@@ -18,6 +18,6 @@ $config['domains'] = array(
 	List of user IDs all links in topics
 	will be followed
 */
-$config['autofollow'] = array(1);
+$config['autofollow'] = array();
 
 return $config;
