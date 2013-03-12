@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/1099511627776/ls_follower.png?branch=master)](https://travis-ci.org/1099511627776/ls_follower)
+
   Если Вы хотите поддержать написание бесплатных плагинов и можете помочь материально:
 
   - http://livestreetcms.com/profile/1099511627776/donate/
