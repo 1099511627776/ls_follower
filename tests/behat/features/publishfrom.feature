@@ -9,7 +9,7 @@ Feature: Greeting plugin standart features BDD
             Then I want to login as "admin"
 			Then I am on "/topic/add"
 			Then I fill in "topic_title" with "test topic1"
-			Then I fill in "topic_text" with " <a href='http://goloskarpat.info/'>goloskarpat.info</a> <a href='http://not-goloskarpat.info/'>not-goloskarpat.info</a>
+			Then I fill in "topic_text" with " <a href='http://goloskarpat.info/'>goloskarpat.info</a> <a href='http://not-goloskarpat.info/'>not-goloskarpat.info</a> "
 			Then I fill in "topic_tags" with "test topic"
 			Then I press element by css "#submit_topic_publish"
 			Then I wait "2000"
