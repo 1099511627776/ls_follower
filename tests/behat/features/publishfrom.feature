@@ -2,7 +2,7 @@ Feature: Greeting plugin standart features BDD
     Test base functionality of LiveStreet publishfrom plugin standart
 
     @mink:selenium2
-    Scenario: publishfrom LiveStreet CMS
+    Scenario: follower LiveStreet CMS
         #login
         Given I am on "/login"
         	Then I wait "2000"

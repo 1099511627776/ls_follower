@@ -22,7 +22,7 @@ before_script:
   - chmod -R 0777 ./templates/compiled/
 
   # install required PHP stuff
-  - sudo apt-get install php5 php5-cli php5-mysql php5-mcrypt php5-xsl php5-xdebug php-apc php5-gd php5-curl php5-intl php5-xmlrpc
+  - sudo apt-get install php5 php5-cli php5-mysql php5-mcrypt php5-xsl php5-xdebug php-apc php5-gd php5-curl php5-intl php5-xmlrpc xfonts-cyrillic
 
   # launch apache, MySQL and PHPUnit Selenium installers
   - ./tests/travis/apache_setup.sh
@@ -43,7 +43,7 @@ before_script:
   - sleep 5
 
   # download and launch Selenium
-  - wget -O /tmp/selenium-server-standalone.jar http://selenium.googlecode.com/files/selenium-server-standalone-2.28.0.jar
+  - wget -O /tmp/selenium-server-standalone.jar http://selenium.googlecode.com/files/selenium-server-standalone-2.31.0.jar
   - java -jar /tmp/selenium-server-standalone.jar > /dev/null &
   - sleep 5
 
