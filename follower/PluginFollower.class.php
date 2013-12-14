@@ -11,6 +11,7 @@ class PluginFollower extends Plugin {
 
     protected $aInherits=array(
         'module' => array('ModuleText'),
+        'entity' => array('ModuleTopic_EntityTopic'),
     );
 
     // Активация плагина
@@ -20,7 +21,7 @@ class PluginFollower extends Plugin {
 
     // Деактивация плагина
     public function Deactivate(){       
-    	return true;
+        return true;
     }
     // Инициализация плагина
     public function Init() {
