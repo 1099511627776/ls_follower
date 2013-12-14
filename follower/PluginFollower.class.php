@@ -11,7 +11,7 @@ class PluginFollower extends Plugin {
 
     protected $aInherits=array(
         'module' => array('ModuleText'),
-        'entity' => array('ModuleTopic_EntityTopic'),
+        'entity' => array('ModuleTopic_EntityTopic','ModuleTopic_EntityContentValues'),
     );
 
     // Активация плагина

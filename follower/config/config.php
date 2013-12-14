@@ -20,11 +20,11 @@ $config['domains'] = array(
 */
 $config['autofollow'] = array();
 
-$config['permanent_nofollow'] = true;
-$config['permanent_outredir'] = false;
+$config['permanent_nofollow'] = true; // Заменять ссылки на лету или во время редактирования текста
+$config['permanent_outredir'] = false; // Заменять ссылки на лету или во время редактирования текста
 
-$config['enable_outredir'] = true;
-$config['use_encoding'] = true;
-$config['use_page'] = false;
+$config['enable_outredir'] = true; // Разрешить замену ссылок на "страницу выхода"
+$config['use_encoding'] = true; // Шифровать (base64) ссылки для "странице выхода"
+$config['use_page'] = false; // Показывать страницу выхода или сразу делать 302 Редирект на внешний сайт
 
 return $config;
