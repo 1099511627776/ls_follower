@@ -4,7 +4,7 @@ function make_out_callback($matches){
     $bOk = true;
     if($domains = Config::Get('plugin.follower.domains')){
         foreach($domains as $domain){
-            if(preg_match('/^'.$domain.'/mi',$matches[2])){
+            if(preg_match('/^'.$domain.'/misuU',$matches[2])){
                 $bOk = false;
                 break;
             }
@@ -37,13 +37,13 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
     protected function FollowDomain($sText,$sDomain){
         $sResult = $sText;
         $sResult = preg_replace(
-            "/<\s*a(.*?)href=[\"'](.*?".$sDomain.".*?)[\"'](.*?)>/mi",
+            "/<\s*a(.*?)href=[\"'](.*?".$sDomain.".*?)[\"'](.*?)>/misuU",
             "<a $1 href=\"$2\" $3>",$sText);
         $sResult = preg_replace(
-            "/<a\s+rel=[\"'](.*?)[\"'](.*?)href=[\"'](.*".$sDomain.".*?)[\"'](.*?)>/mi",
+            "/<a\s+rel=[\"'](.*?)[\"'](.*?)href=[\"'](.*".$sDomain.".*?)[\"'](.*?)>/misuU",
             "<a href=\"$3\" $2 $4>",$sResult);
         $sResult = preg_replace(
-            "/<a\s+href=[\"'](.*?".$sDomain.".*?)[\"'](.*?)rel=[\"](.*?)[\"](.*?)>/mi",
+            "/<a\s+href=[\"'](.*?".$sDomain.".*?)[\"'](.*?)rel=[\"](.*?)[\"](.*?)>/misuU",
             "<a href=\"$1\" $2 $4>",$sResult);
         return $sResult;
     }
@@ -60,7 +60,7 @@ class PluginFollower_ModuleText extends PluginFollower_Inherit_ModuleText
 
     public function MakeOut($sText){
         $sResult = $sText;
-        $sResult = preg_replace_callback("/<\s*a(.*?)href=[\"'](.*?)[\"'](.*?)>/mi",'make_out_callback',$sText);
+        $sResult = preg_replace_callback("/<\s*a(.*?)href=[\"'](.*?)[\"'](.*?)>/misuU",'make_out_callback',$sText);
         return $sResult;
     }
 
